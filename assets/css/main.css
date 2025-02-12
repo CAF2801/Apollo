@@ -1227,7 +1227,7 @@ svg path {
     position: relative;
     width: 1440px;
     max-width: 95%;
-    height: 600px;
+    height: 800px;
     margin: 30px auto;
     background-color: #efefef;
     overflow: hidden
@@ -1265,7 +1265,7 @@ svg path {
 }
 
 #contact .wrapper .blurb {
-    max-width: 950px;
+    max-width: 600px;
     margin-top: -45px;
     text-align: center
 }
@@ -1406,4 +1406,10 @@ svg path {
     margin-bottom: 0;
     font-family: "Raleway", Helvetica, sans-serif;
     font-size: 12px
+}
+
+/* MAP */
+
+#map {
+    height: 250px;
 }

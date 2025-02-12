@@ -33,3 +33,18 @@ scrollToSection.forEach(function(link) {
 		}
 	});
 });
+
+// slider
+
+
+
+// Map
+
+var map = L.map('map').setView([46.813948, -71.147646], 12);
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+var marker = L.marker([46.813948, -71.147646]).addTo(map);
