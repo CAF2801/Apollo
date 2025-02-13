@@ -1,3 +1,7 @@
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+};
+
 $( document ).ready(function() {
 	
 function nav(){
@@ -36,7 +40,48 @@ scrollToSection.forEach(function(link) {
 
 // slider
 
+const slides = document.querySelectorAll('.banner li');
+const nextBtn = document.querySelector('.next');
+const prevBtn = document.querySelector('.prev');
 
+let counter = 0;
+
+slides.forEach(function(slide, index) {
+	slide.style.left = `${index * 100}%`;
+})
+
+nextBtn.addEventListener('click', function() {
+	counter++;
+	slides[counter - 1].classList.remove('active');
+	slides[counter].classList.add('active');
+	carousel();
+})
+prevBtn.addEventListener('click', function() {
+	counter--;
+	slides[counter + 1].classList.remove('active');
+	slides[counter].classList.add('active');
+	carousel();
+})
+
+function carousel() {
+	if(counter < slides.length -1) {
+		nextBtn.style.display = 'block';
+	} else {
+		nextBtn.style.display = 'none';
+	}
+
+	if(counter > 0) {
+		prevBtn.style.display = 'block';
+	} else {
+		prevBtn.style.display = 'none';
+	}
+
+	slides.forEach(function(slide) {
+		slide.style.transform = `translateX(-${counter * 100}%)`;
+	})
+}
+
+prevBtn.style.display = 'none';
 
 // Map
 
@@ -48,3 +93,4 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 var marker = L.marker([46.813948, -71.147646]).addTo(map);
+

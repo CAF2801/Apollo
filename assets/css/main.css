@@ -880,19 +880,20 @@ svg path {
     left: 0;
     right: 0;
     bottom: 0;
+    width: 100%;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    opacity: 0;
+    opacity: 1;
     -webkit-transition: opacity .6s ease-in-out;
-    transition: opacity .6s ease-in-out
+    transition: all .6s ease-in-out
 }
 
 #full-slide .banner li.active {
     opacity: 1;
     -webkit-transition: opacity .6s ease-in-out;
-    transition: opacity .6s ease-in-out
-}
+    transition: all .6s ease-in-out
+} 
 
 #full-slide .banner li:nth-child(1) {
     background-image: url("../img/full-slide/thumb-1.jpg")
